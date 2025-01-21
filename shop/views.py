@@ -2,9 +2,12 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.views import Response
 from django.conf import settings
 import requests
+from .serializer import ProductSerializer
 
 
 class ProductViews(GenericViewSet):
+
+    serializer_class = ProductSerializer
 
     def list(self, request, *args, **kwargs):
         base_url = settings.SHOPIFY_BASE_URL
@@ -15,6 +18,9 @@ class ProductViews(GenericViewSet):
                 "X-Shopify-Access-Token": settings.SHOPIFY_ADMIN_KEY
             }
         )
+        serialize = self.serializer_class(data=response.json())
+        if serialize.is_valid(raise_exception=True):
+            serialize.save()
         return Response({"message": "OK", "data": response.json()})
 
 
