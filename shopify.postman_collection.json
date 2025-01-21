@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "c64020b4-a49e-4a54-b2c7-a44fa54c90ca",
+		"name": "shopify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17659172",
+		"_collection_link": "https://dark-meteor-149133.postman.co/workspace/mawi~d78320bd-ef8f-4405-b613-138959754328/collection/17659172-c64020b4-a49e-4a54-b2c7-a44fa54c90ca?action=share&source=collection_link&creator=17659172"
+	},
+	"item": [
+		{
+			"name": "products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shop/product",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shop",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shop/customer",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shop",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shop/order?name=1001",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shop",
+						"order"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "1001"
+						},
+						{
+							"key": "financial_status",
+							"value": "paid",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shop/inventory",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shop",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	]
+}
